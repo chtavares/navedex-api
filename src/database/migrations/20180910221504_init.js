@@ -20,11 +20,15 @@ export const up = knex =>
         .foreign('naver_id')
         .references('id')
         .inTable('navers')
+        .onDelete('cascade')
+        .onUpdate('cascade')
       table.uuid('project_id')
       table
         .foreign('project_id')
         .references('id')
         .inTable('projects')
+        .onDelete('cascade')
+        .onUpdate('cascade')
       table.timestamps(true, true)
     })
 
