@@ -11,6 +11,7 @@ export const up = knex =>
       table.integer('age')
       table.datetime('admission_date').notNullable()
       table.string('job_role')
+      table.timestamps(true, true)
     })
     .createTable('navers_projects', table => {
       table.increments('id').primary()
